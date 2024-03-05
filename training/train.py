@@ -232,7 +232,7 @@ def training_function(args):
     group_by_length = True
 
     # Save checkpoint every X updates steps
-    save_steps = 25
+    save_steps = 250
 
     # Log every X updates steps
     logging_steps = 25
@@ -252,7 +252,7 @@ def training_function(args):
         fp16=fp16,
         bf16=bf16,
         max_grad_norm=max_grad_norm,
-        max_steps=100, # the total number of training steps to perform
+        #max_steps=100, # the total number of training steps to perform
         warmup_ratio=warmup_ratio,
         group_by_length=group_by_length,
         lr_scheduler_type=lr_scheduler_type,
@@ -267,7 +267,7 @@ def training_function(args):
     ################################################################################
 
     # Maximum sequence length to use
-    max_seq_length = 1024
+    max_seq_length = 2048
 
     # Pack multiple short examples in the same input sequence to increase efficiency
     packing = False
